@@ -15,12 +15,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      
-thoughts:
-  limit: 3
-  
-posts:
-  limit: 3
 
 projects:
   sort_by: pushed
