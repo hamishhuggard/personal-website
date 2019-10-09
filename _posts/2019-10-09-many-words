@@ -1,9 +1,11 @@
 ---
+title: How many words are there?
 published: false
 ---
+
 As practice in doing Fermi estimates, I'd like to make a guess of how many words there are. And to be clear, I don't just mean "how many distinct words are there in the English language?" I mean "how many words *including duplicate* have ever, or will ever exist over the entire course of humanity?"
 
-**I**
+# I
 
 To get a handle on the problem, let's first figure out how many words *I* personally experience.
 
@@ -17,7 +19,7 @@ Between these, I think there are three speeds at which words can come into or ou
  * The speed of writing: My intuition on this is that my writing speed would be about an order of magnitude down from my speaking speed, as I frequently run out of steam and think about what I'm going to write next.
 
 
-**II**
+# II
 
 Let's now extrapolate from words I experience personally to words experienced by the entire human population. 
 
