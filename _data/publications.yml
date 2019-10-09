@@ -1,7 +1,9 @@
-Feature Importance for Biomedical NLP:
-  Authors: Hamish Huggard, Aaron Zhang, Edmond Zhang, Yun Sing Koh
-  Link:
+biomedical_nlp:
+  title: "Feature Importance for Biomedical NLP"
+  authors: "Hamish Huggard, Aaron Zhang, Edmond Zhang, Yun Sing Koh"
+  url:
 
-That Other One
-  Authors: Hamish Huggard, Yun Sing Koh, Pat Riddle, Gustavo Olivares
-  Link: 
+air_quality:
+  title: "Predicting Air Quality from Low-Cost Sensor Measurements"
+  authors: "Hamish Huggard, Yun Sing Koh, Pat Riddle, Gustavo Olivares"
+  url: 
