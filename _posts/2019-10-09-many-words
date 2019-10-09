@@ -1,6 +1,6 @@
 ---
 title: How many words are there?
-published: false
+published: true
 ---
 
 As practice in doing Fermi estimates, I'd like to make a guess of how many words there are. And to be clear, I don't just mean "how many distinct words are there in the English language?" I mean "how many words *including duplicate* have ever, or will ever exist over the entire course of humanity?"
