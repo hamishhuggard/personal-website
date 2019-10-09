@@ -1,0 +1,29 @@
+---
+published: false
+---
+As practice in doing Fermi estimates, I'd like to make a guess of how many words there are. And to be clear, I don't just mean "how many distinct words are there in the English language?" I mean "how many words *including duplicate* have ever, or will ever exist over the entire course of humanity?"
+
+**I**
+
+To get a handle on the problem, let's first figure out how many words *I* personally experience.
+
+I experience words in at least three levels:
+ * **Spoken** Sometimes I say words. Other times I hear words spoken either by other people, or by podcasts, audiobooks, or television.
+ * **Written** I write words down. I also read words which are already written down.
+ * **Thought*** A lot of my thoughts are manifested as words. I also store a lot of words in my brain for later use, in a structure known as my vocablary.
+Between these, I think there are three speeds at which words can come into or out of my consciousness:
+ * The speed of speech: When conversing, this is the speed at which I both output and input words. This is also approximately the speed at which I think and the speed at which dialogue in movies or podcasts proceeds. From memory, I think conversational speed is about 100 words per minute, or ~1.5 words per second, which sounds about right. 
+ * The speed of reading: I'm a fairly slow reader, but I listen to audiobooks at fast speeds, so I think my reading speed and audiobook listening speed would be about the same. I generally listen to audiobooks at between 2x and 3x speed, so let's call this half an order of magnitude up from the speed of speech: ~300 words per minute.
+ * The speed of writing: My intuition on this is that my writing speed would be about an order of magnitude down from my speaking speed, as I frequently run out of steam and think about what I'm going to write next.
+
+
+**II**
+
+Let's now extrapolate from words I experience personally to words experienced by the entire human population. 
+
+There are several ways "how many words there are" could be interpreted:
+ * How many 
+ * How many words have ever been spoken?
+ * How many words have ever been written down?
+ * How many *distinct* words have ever been spoken?
+Each of these questions is interesting on its own, so I'd like to have a crack at each of them.
