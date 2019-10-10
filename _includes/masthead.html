@@ -51,13 +51,12 @@
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
     
-    <h1>Latest Posts</h1>
+    <p><b>Latest Posts<b></p>
 
     <ul>
       {% for post in site.posts %}
         <li>
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt }}</p>
+          <p>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></p>
         </li>
       {% endfor %}
     </ul>
