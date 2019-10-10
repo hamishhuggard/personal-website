@@ -51,7 +51,7 @@
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
     
-    <h2>Latest Posts<h2>
+    <h4>Latest Posts</h4>
 
       {% for post in site.posts %}
           <p>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></p>
