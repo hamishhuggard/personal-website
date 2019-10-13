@@ -28,14 +28,14 @@ defaults:
 #     projects:
 #     # - repo-name
 
-# social_media:
+social_media:
   # behance: your_username
   # dribbble: your_username
   # facebook: your_username
   # hackerrank: your_username
   # instagram: your_username
   # keybase: your_username
-  # linkedin: your_username
+  linkedin: hamish-huggard-572b45123
   # mastodon: your_username
   # medium: your_username
   # stackoverflow: your_user_id
@@ -46,13 +46,13 @@ defaults:
   # website: http://your_website_url
   # youtube: your_username
 
-topics:
-  - name: Machine Learning
-#     web_url: https://github.com/topics/css
-#     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
+# topics:
+#   - name: Machine Learning
+# #     web_url: https://github.com/topics/css
+# #     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
 
-  - name: Data Science
-  - name: Books
+#   - name: Data Science
+#   - name: Books
 
 #   - name: Sass
 #     web_url: https://github.com/topics/sass
