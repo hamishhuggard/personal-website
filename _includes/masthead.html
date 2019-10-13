@@ -51,10 +51,19 @@
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
     
+    <p><a href="archive.html">Blog</a></p>
+    
+    <p><a href="books.html">Books Reviews</a></p>
+    
+    <p><a href="links.html">Links</a></p>
+    
+<!--    
     <h3>Latest Posts</h3>
 
-      {% for post in site.posts %}
-          <p>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></p>
-      {% endfor %}
+    {% for post in site.posts %}
+        <p>{{ post.date | date_to_string }} - <a href="{{ post.url }}">{{ post.title }}</a></p>
+    {% endfor %} 
+-->
+    
   </div>
 {% endif %}
