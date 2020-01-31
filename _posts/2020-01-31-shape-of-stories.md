@@ -4,7 +4,7 @@ title: "The Shape of Stories"
 published: True
 ---
 
-![vonnegart](kurt_vonnegart.png)
+![vonnegart](_posts/2020-01-31-shape-of-stoies/kurt_vonnegart.png)
 
 There’s a great clip of Kurt Vonnegart giving a lecture on [“the shape of stories”](https://www.youtube.com/watch?v=oP3c1h8v2ZQ). He makes the case that stories can be distilled down to a two-dimensional plot. The y-axis is the valence of the story (what he calls the "G-B axis" for good to bad), and the x-axis is time (which he calls the "B-E" axis, for - you guessed it - beginnging to entropy). Not only does Vonnegart say that stories can be distilled to these shapes, but also that:
 
@@ -36,7 +36,7 @@ plt.style.use('seaborn')
 
 ## Sentiment Analysis
 
-There are many approaches to sentiment analysis. The easiest is a simple bag-of-words model, in which we count up the number of positive words (“happy”, “good”, “amazeballs”) in the text, then count the number of negative words (“hangry”, “bleh”, “stanky”), and the valence of the text is the number of positive words minus the number of negative words. This approach will probably do for our purposes. 
+There are many approaches to sentiment analysis. The easiest is a simple bag-of-words model, in which we count up the number of positive words (“happy”, “good”, “amazeballs”) in the text, then count the number of negative words (“hangry”, “bleh”, “stanky”), and the valence of the text is the number of positive words minus the number of negative words. This approach will probably do for our purposes.
 
 After a little Googling, I came across [this](https://positivewordsresearch.com/sentiment-analysis-resources/) page of sentiment analysis resources. I decided to go with [SentiWordNet](https://github.com/aesuli/sentiwordnet) because it's built on WordNet which I'm already familiar with. SentiWordNet gives a positive sentiment and negative sentiment score to every synset (group of synonymous words) in WordNet's lexicon. Because a given word could have several associated synsets, each corresponding to a different meaning of the word, there are several possible sentiment values associated with each word. I decided to simply use the sentiment associated with the *first* synset of each word.
 
@@ -122,24 +122,24 @@ texterella = extract_story(texterella, story_start, story_end)
 print(texterella[:500] + '\n\n[...]\n\n' + texterella[-500:])
 ```
 
-    A rich man's wife became sick, and when she felt that her end was 
-    drawing near, she called her only daughter to her bedside and said, "Dear 
-    child, remain pious and good, and then our dear God will always protect 
-    you, and I will look down on you from heaven and be near you." With this 
-    she closed her eyes and died. 
-    The girl went out to her mother's grave every day and wept, and she 
-    remained pious and good. When winter came the snow spread a white cloth 
+    A rich man's wife became sick, and when she felt that her end was
+    drawing near, she called her only daughter to her bedside and said, "Dear
+    child, remain pious and good, and then our dear God will always protect
+    you, and I will look down on you from heaven and be near you." With this
+    she closed her eyes and died.
+    The girl went out to her mother's grave every day and wept, and she
+    remained pious and good. When winter came the snow spread a white cloth
     over the grave, and when the spring su
-    
+
     [...]
-    
-    o share her good fortune. 
-    When the bridal couple walked into the church, the older sister walked on 
-    their right side and the younger on their left side, and the pigeons 
-    pecked out one eye from each of them. Afterwards, as they came out of the 
-    church, the older one was on the left side, and the younger one on the 
-    right side, and then the pigeons pecked out the other eye from each of 
-    them. And thus, for their wickedness and falsehood, they were punished 
+
+    o share her good fortune.
+    When the bridal couple walked into the church, the older sister walked on
+    their right side and the younger on their left side, and the pigeons
+    pecked out one eye from each of them. Afterwards, as they came out of the
+    church, the older one was on the left side, and the younger one on the
+    right side, and then the pigeons pecked out the other eye from each of
+    them. And thus, for their wickedness and falsehood, they were punished
     with blindness as long as they lived.
 
 
@@ -157,9 +157,9 @@ print(texterella[:500] + '\n\n[...]\n\n' + texterella[-500:])
 ```
 
     Cinderella’s mother died while she was a very little child, leaving her to the care of her father and her step-sisters, who were very much older than herself; for Cinderella’s father had been twice married, and her mother was his second wife. Now, Cinderella’s sisters did not love her, and were very unkind to her. As she grew older they made her work as a servant, and even sift the cinders; on which account they used to call her in mockery “Cinderella.” It was not her real name, but she became a
-    
+
     [...]
-    
+
     ed, the Fairy godmother suddenly entered the room, and placing her godchild’s hand in the Prince’s, said:“Take this young girl for your wife, Prince; she is good and patient, and as she has known how to submit to injustice meekly, she will know how to reign justly.”So Cinderella was married to the Prince in great state, and they lived together very happily. She forgave her sisters, and treated them always very kindly, and the Prince had great cause to be glad that he had found the glass slipper.
 
 
@@ -174,9 +174,9 @@ def text_to_df(text):
     window_size = len(words) // 100
     df = pd.DataFrame()
     df['Percent'] = np.arange(100)
-    df['Words'] = [ words[window_size*i: window_size*(i+1)] 
+    df['Words'] = [ words[window_size*i: window_size*(i+1)]
                    for i in range(100) ]
-    df['Sentiment'] = df['Words'].apply(lambda window: 
+    df['Sentiment'] = df['Words'].apply(lambda window:
                                         np.mean([ get_sentiment(word) for word in window ] ) )
     return df
 ```
@@ -413,7 +413,7 @@ def cinderella_f(x):
         return -0.5
     elif 80 <= x < 100:
         return 1 / (99.5-x) - 0.5 - 1/(101-80)
-    
+
 vonnegart_df = cinderella_df[['Percent']]
 vonnegart_df.loc[:, 'Sentiment'] = vonnegart_df['Percent'].apply(cinderella_f)
 vonnegart_df.loc[:, 'Curve'] = 'Vonnegart Curve'
@@ -422,7 +422,7 @@ plt.title('Vonnegart');
 ```
 
 
-![png](output_25_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_25_0.png)
 
 
 The progress goes something like this:
@@ -440,7 +440,7 @@ sns.relplot(x='Percent', y='Sentiment', kind='line', data=cinderella_df);
 ```
 
 
-![png](output_28_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_28_0.png)
 
 
 # Smoothing the Sentiment Plot
@@ -471,14 +471,14 @@ for window_size in [2, 5, 10, 25]:
     window_df.loc[:, 'Sentiment'] = sliding_window(cinderella_df['Sentiment'], window_size)
     window_df.loc[:, 'Window Size'] = f'{window_size}%'
     window_df.loc[:, 'Curve'] = 'Sliding Window'
-    
+
     windows_df = windows_df.append(window_df)
-    
+
 sns.relplot(x='Percent', y='Sentiment', col='Window Size', kind='line', data=windows_df);
 ```
 
 
-![png](output_30_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_30_0.png)
 
 
 Window sizes of 5\%, 10\%, and 25\% all look reasonable. I decided to go with the middle one of these: 10\%.
@@ -508,14 +508,14 @@ for alpha in [0.25, 0.5, 0.75, 0.9]:
     ewma_df.loc[:, 'Sentiment'] = ewma(cinderella_df['Sentiment'], alpha)
     ewma_df.loc[:, 'Alpha'] = alpha
     ewma_df.loc[:, 'Curve'] = 'EWMA'
-    
+
     ewmas_df = ewmas_df.append(ewma_df)
-    
+
 sns.relplot(x='Percent', y='Sentiment', col='Alpha', kind='line', data=ewmas_df);
 ```
 
 
-![png](output_33_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_33_0.png)
 
 
 I think $\alpha=0.75$ is probably the best of these. But not as good as the sliding window with window size = 10\%, so I've used that one from now on. Let's now put that on the same axes as Vonnegart's plot, and see how well it matches up. Note that the range of the sliding window sentiments is very small, so we have to normalise it.
@@ -532,15 +532,15 @@ sns.relplot(x='Percent', y='Sentiment', hue='Curve', style='Curve', kind='line',
 ```
 
 
-![png](output_35_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_35_0.png)
 
 
 Not too bad. The main problem I see with this is that the empirical sentiment starts at a high point, whereas the Vonnegart curve starts at a low point. Looking back at the first paragraph, the opening is a little ambiguous:
-> A rich man's wife became sick, and when she felt that her end was 
-drawing near, she called her only daughter to her bedside and said, "Dear 
-child, remain pious and good, and then our dear God will always protect 
-you, and I will look down on you from heaven and be near you." With this 
-she closed her eyes and died. 
+> A rich man's wife became sick, and when she felt that her end was
+drawing near, she called her only daughter to her bedside and said, "Dear
+child, remain pious and good, and then our dear God will always protect
+you, and I will look down on you from heaven and be near you." With this
+she closed her eyes and died.
 
 # All The Stories!
 
@@ -549,7 +549,7 @@ Now that we've got our sentiment plotting procedure down, we can plot all the ki
  * Boy meets girl: a boy meets a girl, is over the moon, everything goes to custard, but then he gets her back again and everything is wonderful. I had a hard time thinking of an example of this genre. I eventually settled on Jane Eyre, which doesn't quite fit the mould but seems to be close enough. I modelled Vonnegart's curve as a sine with linearly increasing amplitude.
  * Kafka: not very pleasant man turns into a bug and everything is terrible forever. Easy enough to model as negative parabola with y-intercept of -0.5.
  * Hamlet: a bunch of stuff happens, but it's never clear if it's good or bad. So we stay at -0.5 throughout the whole story.
- 
+
 Let's see how the Vonnegart plots compare to the empirical sentiment for each of these stories.
 
 
@@ -594,7 +594,7 @@ story_names = ['Cinderella', 'Hamlet', 'Kafka', 'Man in Hole', 'Boy meets Girl']
 ```python
 storys_df = pd.DataFrame(columns=['Progress', 'Sentiment', 'Curve', 'Story'])
 for f, story, story_name in zip(story_fs, story_texts, story_names):
-    
+
     # Empirical plot
     story_df = text_to_df(story)
     story_df.loc[:, 'Sentiment'] = sliding_window(story_df['Sentiment'], 10)
@@ -602,39 +602,39 @@ for f, story, story_name in zip(story_fs, story_texts, story_names):
     sent_min = story_df['Sentiment'].min()
     sent_max = story_df['Sentiment'].max()
     story_df.loc[:, 'Sentiment'] = story_df['Sentiment'].apply(lambda x: (x-sent_min) * 2 / (sent_max - sent_min) - 1)
-    
-    
+
+
     # Vonnegart plot
     vonnegart_df = story_df.copy()
     vonnegart_df.loc[:, 'Sentiment'] = vonnegart_df['Percent'].apply(f)
     vonnegart_df.loc[:, 'Curve'] = 'Vonnegart Curve'
-    
+
     story_df = story_df.append(vonnegart_df)
     story_df.loc[:, 'Story'] = story_name
-    
+
     storys_df = storys_df.append(story_df)
-    
+
 sns.relplot(x='Percent', y='Sentiment', col='Story', hue='Curve', style='Curve', kind='line', data=storys_df);
 ```
 
 
-![png](output_39_0.png)
+![png](_posts/2020-01-31-shape-of-stoies/output_39_0.png)
 
 
 Observations:
  * I can't spell "stories".
  * The Man in Hole plot and Boy Meets Girl plots are actually pretty good. With a little tinkering with the phase of the Vonnegart curves, they could probably match the empirical curves pretty well.
  * I've just noticed that the Cinderella curve is actually an instance of the Boy Meets Girl curve.
- * The Kafka curve is way off, but that's not really surprising as that one seemed more like a joke. 
+ * The Kafka curve is way off, but that's not really surprising as that one seemed more like a joke.
  * The Hamlet curve isn't too bad, although a negative Man in Hole curve would probably suit it better.
  * For all of these curves, it looks like there's an oscillation which goes right through the story. This oscillation can change amplitude or gain an additive constant, but keeps a constant period. Which makes me what to do a Fourier analysis on these curves. Perhaps they can be modelled by the sum of two sines?
- 
+
 I was curious what the tall peak corresponded to in the Hamlet plot, so I wrote a function to look at the text for the top $n$ peaks or troughs of a given curve.
 
 
 ```python
 def get_extremes(story_name, n_peaks=5, mode='peaks'):
-    
+
     # Sort the story segments by sentiment
     if mode=='peaks':
         ascending = False
@@ -644,7 +644,7 @@ def get_extremes(story_name, n_peaks=5, mode='peaks'):
         raise ValueError('mode should be "peaks" or "troughs"')
     story_df = storys_df[(storys_df['Story']==story_name) & (storys_df['Curve']=='Empirical')]
     story_df.sort_values('Sentiment', inplace=True, ascending=ascending)
-    
+
     # This loop makes sure that each discrete peak is only represented once
     top_lines = pd.DataFrame(columns=story_df.columns)
     for i in range(n_peaks):
@@ -652,10 +652,10 @@ def get_extremes(story_name, n_peaks=5, mode='peaks'):
         top_row = story_df.loc[0, :]
         top_lines.loc[i, :] = top_row
         percentage = top_row['Percent']
-        
+
         # exclude all other rows within 10 percentage points of this peak
         story_df = story_df[ (story_df['Percent'] > percentage + 10) | (story_df['Percent'] < percentage - 10) ]
-        
+
     # Make the dataframe look pretty
     def words_to_text(words):
         text = ' '.join(words)
@@ -666,7 +666,7 @@ def get_extremes(story_name, n_peaks=5, mode='peaks'):
         return text
     top_lines['Text'] = top_lines['Words'].apply(words_to_text)
     top_lines = top_lines[['Percent', 'Sentiment', 'Text']]
-                            
+
     return top_lines
 ```
 
@@ -675,9 +675,9 @@ def get_extremes(story_name, n_peaks=5, mode='peaks'):
 get_extremes('Hamlet', mode='peaks')
 ```
 
-    /anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:11: SettingWithCopyWarning: 
+    /anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:11: SettingWithCopyWarning:
     A value is trying to be set on a copy of a slice from a DataFrame
-    
+
     See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
       # This is added back by InteractiveShellApp.init_path()
 
@@ -749,8 +749,8 @@ Looks like it's the bit where Guidenstern and Rosencratz arrive at Elsinore. Is 
 
 # Conclusion
 
-So what have we learned here? We've learned that using a sliding window with a window size of 10\% of the text does smooth out the sentiment curve pretty well so that you can make out the arc of the story. We've learned that we can sometimes make out the kinds of curves that Vonnegart talks about in stories - as in the cases of Cinderella, The Hobbit, and Jane Eyre - but not always - as in the cases of Hamlet and Kafka. 
+So what have we learned here? We've learned that using a sliding window with a window size of 10\% of the text does smooth out the sentiment curve pretty well so that you can make out the arc of the story. We've learned that we can sometimes make out the kinds of curves that Vonnegart talks about in stories - as in the cases of Cinderella, The Hobbit, and Jane Eyre - but not always - as in the cases of Hamlet and Kafka.
 
-I've got several ideas about how to extend this work. As mentioned earlier, it's probably worth exploring some other sentiment analysis technologies, to see if I can get sentiment scores that line up with intuition better. I also mentioned earlier that I'd be interested in doing Fourier analysis of these story plots, to see what kinds of cycles there are, and whether stories can be modelled by a pair of sinusoids. 
+I've got several ideas about how to extend this work. As mentioned earlier, it's probably worth exploring some other sentiment analysis technologies, to see if I can get sentiment scores that line up with intuition better. I also mentioned earlier that I'd be interested in doing Fourier analysis of these story plots, to see what kinds of cycles there are, and whether stories can be modelled by a pair of sinusoids.
 
 I'm also interested in creating "shape of story" plots for a wider range of stories. One that I think would be really interesting is the web serial Worm by J.C. McCrae. [Worm](https://parahumans.wordpress.com/) is a whopper of a book, at 6,000 pages if it was physically printed. It’s also really grim, but it somehow manages to keep getting grimmer as the book progresses. Does this show up in the plot?
