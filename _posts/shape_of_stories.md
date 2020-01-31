@@ -1,5 +1,8 @@
 
-# The Shape of Stories
+---
+title: "The Shape of Stories"
+published: True
+---
 
 ![vonnegart](kurt_vonnegart.png)
 
