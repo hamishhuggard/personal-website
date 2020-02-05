@@ -3,9 +3,13 @@ title: "The Shape of Stories"
 published: True
 ---
 
-![nothing](/assets/images/test_image.png)
+![test1](/assets/images/test_image.png)
 
-![vonnegart](/_posts/2020-01-31-shape-of-stories/kurt_vonnegart.png)
+![test1](/assets/images/test_dir/test_image.png)
+
+![test1](/assets/images/2020-01-31-shape-of-stories/test_image.png)
+
+![vonnegart](/assets/images/2020-01-31-shape-of-stories/kurt_vonnegart.png)
 
 There’s a great clip of Kurt Vonnegart giving a lecture on [“the shape of stories”](https://www.youtube.com/watch?v=oP3c1h8v2ZQ). He makes the case that stories can be distilled down to a two-dimensional plot. The y-axis is the valence of the story (what he calls the "G-B axis" for good to bad), and the x-axis is time (which he calls the "B-E" axis, for - you guessed it - beginnging to entropy). Not only does Vonnegart say that stories can be distilled to these shapes, but also that:
 
@@ -423,7 +427,7 @@ plt.title('Vonnegart');
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_25_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_25_0.png)
 
 
 The progress goes something like this:
@@ -441,7 +445,7 @@ sns.relplot(x='Percent', y='Sentiment', kind='line', data=cinderella_df);
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_28_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_28_0.png)
 
 
 # Smoothing the Sentiment Plot
@@ -479,7 +483,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Window Size', kind='line', data=win
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_30_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_30_0.png)
 
 
 Window sizes of 5\%, 10\%, and 25\% all look reasonable. I decided to go with the middle one of these: 10\%.
@@ -516,7 +520,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Alpha', kind='line', data=ewmas_df)
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_33_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_33_0.png)
 
 
 I think $\alpha=0.75$ is probably the best of these. But not as good as the sliding window with window size = 10\%, so I've used that one from now on. Let's now put that on the same axes as Vonnegart's plot, and see how well it matches up. Note that the range of the sliding window sentiments is very small, so we have to normalise it.
@@ -533,7 +537,7 @@ sns.relplot(x='Percent', y='Sentiment', hue='Curve', style='Curve', kind='line',
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_35_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_35_0.png)
 
 
 Not too bad. The main problem I see with this is that the empirical sentiment starts at a high point, whereas the Vonnegart curve starts at a low point. Looking back at the first paragraph, the opening is a little ambiguous:
@@ -619,7 +623,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Story', hue='Curve', style='Curve',
 ```
 
 
-![png](/_posts/2020-01-31-shape-of-stories/output_39_0.png)
+![png](/assets/images/2020-01-31-shape-of-stories/output_39_0.png)
 
 
 Observations:
