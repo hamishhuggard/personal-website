@@ -3,6 +3,8 @@ title: "The Shape of Stories"
 published: True
 ---
 
+![nothing](/assets/images/test_image.png)
+
 ![vonnegart](/_posts/2020-01-31-shape-of-stories/kurt_vonnegart.png)
 
 There’s a great clip of Kurt Vonnegart giving a lecture on [“the shape of stories”](https://www.youtube.com/watch?v=oP3c1h8v2ZQ). He makes the case that stories can be distilled down to a two-dimensional plot. The y-axis is the valence of the story (what he calls the "G-B axis" for good to bad), and the x-axis is time (which he calls the "B-E" axis, for - you guessed it - beginnging to entropy). Not only does Vonnegart say that stories can be distilled to these shapes, but also that:
