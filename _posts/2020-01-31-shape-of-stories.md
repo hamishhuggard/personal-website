@@ -1,16 +1,17 @@
----
+%---
 title: "The Shape of Stories"
 published: True
 ---
 
-![vonnegart](/assets/images/2020-01-31-shape-of-stories/kurt_vonnegart.png)
-<img src="/assets/images/2020-01-31-shape-of-stories/kurt_vonnegart.png" alt="Vonnegart" width="300"/>
+<img src="/assets/images/2020-01-31-shape-of-stories/kurt_vonnegart.png" alt="Vonnegart" width="600"/>
 
 There’s a great clip of Kurt Vonnegart giving a lecture on [“the shape of stories”](https://www.youtube.com/watch?v=oP3c1h8v2ZQ). He makes the case that stories can be distilled down to a two-dimensional plot. The y-axis is the valence of the story (what he calls the "G-B axis" for good to bad), and the x-axis is time (which he calls the "B-E" axis, for - you guessed it - beginnging to entropy). Not only does Vonnegart say that stories can be distilled to these shapes, but also that:
 
 > There's no reason why the simple shapes of stories can't be fed into computers.
 
 That is, we should be able to extract the shape of a story using algorithms! And so, in this post I will attempt to do just that; I will use sentiment analysis to try and empirically recreate the curves which Vonnegart attributes to several stories.
+
+NOTE: Sorry about the maths not rendering properly in this post. I'm still figuring out this markdown format.
 
 Let's start by importing the libraries we'll need and looking into some sentiment analysis.
 
@@ -426,11 +427,11 @@ plt.title('Vonnegart');
 
 
 The progress goes something like this:
- * 0-20\%: Cinderella's mother has died and is forced to do nasty chores.
- * 20-40\%: The fairy godmother gives Ciderella lots of nice clothes, makeup, and dresses so she can go to the ball.
- * 40-60\%: Cinderella dances with the Prince and has a wonderful time.
- * 60-80\%: After the midnight bell rings, she goes back down to a low valence. But not *as* low as she was originally because now she's got a wonderful memory.
- * 80-100\%: Cinderella marries hte prince and lives happilly ever after.
+ * 0-20%: Cinderella's mother has died and is forced to do nasty chores.
+ * 20-40%: The fairy godmother gives Ciderella lots of nice clothes, makeup, and dresses so she can go to the ball.
+ * 40-60%: Cinderella dances with the Prince and has a wonderful time.
+ * 60-80%: After the midnight bell rings, she goes back down to a low valence. But not *as* low as she was originally because now she's got a wonderful memory.
+ * 80-100%: Cinderella marries hte prince and lives happilly ever after.
 
 Let's now compare this to the empirical sentiment over time.
 
@@ -481,7 +482,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Window Size', kind='line', data=win
 ![png](/assets/images/2020-01-31-shape-of-stories/output_30_0.png)
 
 
-Window sizes of 5\%, 10\%, and 25\% all look reasonable. I decided to go with the middle one of these: 10\%.
+Window sizes of 5%, 10%, and 25% all look reasonable. I decided to go with the middle one of these: 10%.
 
 ### EWMA
 
@@ -518,7 +519,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Alpha', kind='line', data=ewmas_df)
 ![png](/assets/images/2020-01-31-shape-of-stories/output_33_0.png)
 
 
-I think $\alpha=0.75$ is probably the best of these. But not as good as the sliding window with window size = 10\%, so I've used that one from now on. Let's now put that on the same axes as Vonnegart's plot, and see how well it matches up. Note that the range of the sliding window sentiments is very small, so we have to normalise it.
+I think $\alpha=0.75$ is probably the best of these. But not as good as the sliding window with window size = 10%, so I've used that one from now on. Let's now put that on the same axes as Vonnegart's plot, and see how well it matches up. Note that the range of the sliding window sentiments is very small, so we have to normalise it.
 
 
 ```python
@@ -749,7 +750,7 @@ Looks like it's the bit where Guidenstern and Rosencratz arrive at Elsinore. Is 
 
 # Conclusion
 
-So what have we learned here? We've learned that using a sliding window with a window size of 10\% of the text does smooth out the sentiment curve pretty well so that you can make out the arc of the story. We've learned that we can sometimes make out the kinds of curves that Vonnegart talks about in stories - as in the cases of Cinderella, The Hobbit, and Jane Eyre - but not always - as in the cases of Hamlet and Kafka.
+So what have we learned here? We've learned that using a sliding window with a window size of 10% of the text does smooth out the sentiment curve pretty well so that you can make out the arc of the story. We've learned that we can sometimes make out the kinds of curves that Vonnegart talks about in stories - as in the cases of Cinderella, The Hobbit, and Jane Eyre - but not always - as in the cases of Hamlet and Kafka.
 
 I've got several ideas about how to extend this work. As mentioned earlier, it's probably worth exploring some other sentiment analysis technologies, to see if I can get sentiment scores that line up with intuition better. I also mentioned earlier that I'd be interested in doing Fourier analysis of these story plots, to see what kinds of cycles there are, and whether stories can be modelled by a pair of sinusoids.
 
