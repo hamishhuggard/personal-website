@@ -478,8 +478,7 @@ for window_size in [2, 5, 10, 25]:
 sns.relplot(x='Percent', y='Sentiment', col='Window Size', kind='line', data=windows_df);
 ```
 
-
-![png](/assets/images/2020-01-31-shape-of-stories/output_30_0.png)
+<img src="/assets/images/2020-01-31-shape-of-stories/output_30_0.png" alt="All the stories!" width="100%"/>
 
 
 Window sizes of 5%, 10%, and 25% all look reasonable. I decided to go with the middle one of these: 10%.
@@ -515,8 +514,7 @@ for alpha in [0.25, 0.5, 0.75, 0.9]:
 sns.relplot(x='Percent', y='Sentiment', col='Alpha', kind='line', data=ewmas_df);
 ```
 
-
-![png](/assets/images/2020-01-31-shape-of-stories/output_33_0.png)
+<img src="/assets/images/2020-01-31-shape-of-stories/output_33_0.png" alt="All the stories!" width="100%"/>
 
 
 I think $\alpha=0.75$ is probably the best of these. But not as good as the sliding window with window size = 10%, so I've used that one from now on. Let's now put that on the same axes as Vonnegart's plot, and see how well it matches up. Note that the range of the sliding window sentiments is very small, so we have to normalise it.
@@ -619,7 +617,7 @@ sns.relplot(x='Percent', y='Sentiment', col='Story', hue='Curve', style='Curve',
 ```
 
 
-<img src="/assets/images/2020-01-31-shape-of-stories/output_39_0.png" alt="All the stories!" width="80%"/>
+<img src="/assets/images/2020-01-31-shape-of-stories/output_39_0.png" alt="All the stories!" width="100%"/>
 
 
 
