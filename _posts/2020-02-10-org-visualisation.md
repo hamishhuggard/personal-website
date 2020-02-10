@@ -136,7 +136,7 @@ g.ax_joint.set_yticks(ticks);
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_11_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_11_0.png" width="100%"/>
 
 
 Notice how the $x=y$ line is clearly visible. Points can't go below this line because you can't begin your membership before you end it. The greater the verticle height from the $x=y$ line, the longer that person was a member. It looks like the longest membership lasted from 2005 to 2013! The biggest exodus occurred in 2010, which probably prompted a big recruitment drive in 2011 where we see the largest uptake of new members.
@@ -156,7 +156,7 @@ plt.title('Member Tenure');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_14_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_14_0.png" width="100%"/>
 
 
 Each bin is one semester long. So most members drop out after only one semester, and after 3 semester's almost everyone is done, although there have been a few hardcore members who've stuck around for many years. The longest membership was 7 years; no doube the 2005 to 2012 member we noted from the previous plot.
@@ -190,7 +190,7 @@ plt.show()
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_17_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_17_0.png" width="100%"/>
 
 
 The only thing to note here is that the curriculum changed by 2019, so a different set of education awards were available.
@@ -242,7 +242,7 @@ plt.title('Cumulative Membership');
 
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_20_1" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_20_1.png" width="100%"/>
 
 
 Several things to note:
@@ -415,7 +415,7 @@ plt.show()
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_24_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_24_0.png" width="100%"/>
 
 
 Observations:
@@ -492,7 +492,7 @@ plt.gca().set_ylabel('Member Count');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_28_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_28_0.png" width="100%"/>
 
 
 Here's what's going on in this plot. Each line represents a member, spanning from when the member joins to when they leave. The lines are all stacked on top of each other, so that you can tell how many members there are by looking at how high the stack is at a given time. Peak membership occurred in 2010, at which point it briefly exceeded 40 people. Membership has only been as low as it currently is twice before: in 2015, and when the club was founded in 2001.
@@ -514,7 +514,7 @@ plt.gca().set_ylabel('Member Count');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_30_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_30_0.png" width="100%"/>
 
 
 and _this_ plot, which somehow reminds me both of [Escher](https://www.wikiart.org/en/m-c-escher/metamorphosis-iii-excerpt-3-1968) and of that famous Japanese [print of a wave](https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa)
@@ -529,7 +529,7 @@ plt.gca().set_ylabel('Member Count');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_32_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_32_0.png" width="100%"/>
 
 
 This last plot is interesting because it's looks so three dimensional.
@@ -544,7 +544,7 @@ plt.gca().set_ylabel('Member Count');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_34_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_34_0.png" width="100%"/>
 
 
 ## Individual Officer Timelines
@@ -702,7 +702,7 @@ ax.set_title('Varsity Toastmasters Membership and Officers Timeline');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_38_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_38_0.png" width="100%"/>
 
 
 This plot has members sorted so that the oldest member is at the bottom. We can see that presidents tend to be among the oldest members, whereas not-so important roles like secretary tend to be medium-seniority members. The times have been discretized to prevent too many ugly steep gradients. An unfortunate artefact of this is that there can often be several people with the same officer role at the same time.
@@ -895,7 +895,7 @@ ax.set_title('Varsity Toastmasters Membership and Officers Timeline');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_43_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_43_0.png" width="100%"/>
 
 
 This plot has the line start and end x-coordinates rounded to the nearest quarter-year, which gives it this really neat pattern. It looks like a piece of [Mondrian](https://www.wikiart.org/en/piet-mondrian/broadway-boogie-woogie-1943)-style abstract art.
@@ -969,7 +969,7 @@ ax.set_title('Individual Membership and Officer Role Plot');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_46_0" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_46_0.png" width="100%"/>
 
 
 Here each member is a vertical line, with colours representing officer roles. This plot has a number of nice properties:
