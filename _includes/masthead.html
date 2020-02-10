@@ -12,14 +12,6 @@
 
 {% if include.metadata %}
   <div class="f4 mb-6">
-    {% if user.name %}
-      <div class="{{ metadata_styles }}">
-        {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
-        <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-<!--           @{{ user.login }} -->
-        </a>
-      </div>
-    {% endif %}
     {% if user.email %}
       <div class="{{ metadata_styles }}">
         {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
@@ -36,6 +28,16 @@
     {% endif %}
     {% if site.social_media %}
       <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
+
+        {% if user.name %}
+          <div class="{{ metadata_styles }}">
+            {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
+            <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+    <!--           @{{ user.login }} -->
+            </a>
+          </div>
+        {% endif %}
+        
         {% for account in site.social_media %}
           <div class="{% unless forloop.last == true %}mr-3{% endunless %} mb-3">
             {% assign service_shortname = account[0] %}
