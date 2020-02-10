@@ -136,7 +136,7 @@ g.ax_joint.set_yticks(ticks);
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_11_0.png" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_11_0.png"/>
 
 
 Notice how the $x=y$ line is clearly visible. Points can't go below this line because you can't begin your membership before you end it. The greater the verticle height from the $x=y$ line, the longer that person was a member. It looks like the longest membership lasted from 2005 to 2013! The biggest exodus occurred in 2010, which probably prompted a big recruitment drive in 2011 where we see the largest uptake of new members.
@@ -156,7 +156,7 @@ plt.title('Member Tenure');
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_14_0.png" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_14_0.png"/>
 
 
 Each bin is one semester long. So most members drop out after only one semester, and after 3 semester's almost everyone is done, although there have been a few hardcore members who've stuck around for many years. The longest membership was 7 years; no doube the 2005 to 2012 member we noted from the previous plot.
@@ -242,7 +242,7 @@ plt.title('Cumulative Membership');
 
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_20_1.png" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_20_1.png"/>
 
 
 Several things to note:
@@ -415,7 +415,7 @@ plt.show()
 ```
 
 
-<img src="/assets/images/2020-02-10-org-visualisation/output_24_0.png" width="100%"/>
+<img src="/assets/images/2020-02-10-org-visualisation/output_24_0.png"/>
 
 
 Observations:
