@@ -11,6 +11,8 @@ There’s a great clip of Kurt Vonnegart giving a lecture on [“the shape of st
 
 That is, we should be able to extract the shape of a story using algorithms! And so, in this post I will attempt to do just that; I will use sentiment analysis to try and empirically recreate the curves which Vonnegart attributes to several stories.
 
+Update: Since writing this post, I've found that Indicio has a [similar post](https://indico.io/blog/plotlines/) on their blog.
+
 NOTE: Sorry about the maths not rendering properly in this post. I'm still figuring out this markdown format.
 
 Let's start by importing the libraries we'll need and looking into some sentiment analysis.
